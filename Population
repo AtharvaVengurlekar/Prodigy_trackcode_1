@@ -1,0 +1,19 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+data = {
+    'Age': [23, 45, 56, 45, 34, 23, 45, 23, 23, 56, 45, 34, 23, 45, 23, 23, 56, 45, 34, 23, 45, 23, 23, 56, 45, 34, 23, 45, 23, 23],
+    'Gender': ['Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female']
+}
+
+df = pd.DataFrame(data)
+
+gender_counts = df['Gender'].value_counts()
+
+plt.figure(figsize=(10, 6))
+plt.hist(df['Age'], bins=10, color='green', edgecolor='black')
+plt.title('Age Distribution')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
